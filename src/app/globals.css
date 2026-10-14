@@ -1,0 +1,346 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+/* 1. DISEÑO GENERAL */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #f5f1ff;
+  color: #333;
+  font-family: "Poppins", sans-serif;
+}
+
+.contenedor {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 30px 25px;
+}
+
+/* 2. ENCABEZADO */
+
+.encabezado {
+  position: relative;
+  text-align: center;
+  margin-bottom: 35px;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.encabezado h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.encabezado p {
+  color: #777;
+}
+
+/*Imagen*/
+.imagen-estudio {
+  position: absolute;
+  right: 20px;
+  top: 0;
+  width: 115px;
+  height: 115px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+@media (max-width: 600px) {
+  .imagen-estudio {
+    position: static;
+    width: 90px;
+    height: 90px;
+    margin-top: 15px;
+  }
+}
+
+/* 3. ESTILO GENERAL DE TARJETAS */
+
+.tarjeta,
+.tarjeta-materia {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  min-width: 0;
+}
+
+.tarjeta {
+  text-align: center;
+}
+
+.tarjeta h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+/* 4. BOTONES Y CAMPOS */
+
+button {
+  background: #d8c6f5;
+  color: #333;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 12px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #b9a4eb;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+input:not([type="checkbox"]),
+textarea {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* 5. MOTIVACIÓN Y FECHA */
+
+.fila-informacion {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 20px;
+  max-width: 850px;
+  margin: 0 auto 30px;
+  align-items: stretch;
+}
+
+.fila-informacion > .tarjeta {
+  height: 100%;
+  margin: 0;
+}
+
+.motivacion {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.motivacion h2 {
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+.motivacion p {
+  font-style: italic;
+  overflow-wrap: anywhere;
+}
+
+.motivacion small {
+  color: #777;
+}
+
+.fecha-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.fecha-card h2 {
+  margin-bottom: 5px;
+}
+
+/* 6. CRONÓMETRO, HISTORIAL Y TAREAS */
+
+.fila-superior {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.4fr;
+  gap: 20px;
+  align-items: stretch;
+  margin-bottom: 30px;
+}
+
+.fila-superior > * {
+  min-width: 0;
+}
+
+.fila-superior .tarjeta {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+/* Cronómetro */
+
+.cronometro-card h3 {
+  font-size: 25px;
+  margin: 20px 0;
+}
+
+.botones-crono {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+/* Separar el botón Guardar */
+.cronometro-card input + button {
+  margin-top: 15px;
+}
+
+/* Historial */
+
+.historial-card .sesion {
+  background: #f5f1ff;
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  overflow-wrap: anywhere;
+}
+
+.historial-card .sesion p {
+  margin-bottom: 10px;
+}
+
+/* Recordatorios */
+
+.agregar-tarea {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.agregar-tarea input {
+  flex: 1;
+}
+
+.tarea {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.tarea span {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  text-align: left;
+}
+
+/* 7. MATERIAS */
+
+.seccion-materias {
+  margin-top: 30px;
+}
+
+.materias {
+  text-align: center;
+}
+
+.materias h2 {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.formulario-materia {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.lista-materias {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.tarjeta-materia {
+  text-align: left;
+}
+
+.tarjeta-materia h3,
+.tarjeta-materia h4 {
+  margin-bottom: 12px;
+}
+
+.tarjeta-materia p {
+  margin-bottom: 20px;
+  overflow-wrap: anywhere;
+}
+
+.tarjeta-materia textarea {
+  width: 100%;
+  min-height: 100px;
+  display: block;
+  margin-bottom: 15px;
+  resize: vertical;
+}
+
+/* 8. ADAPTACIÓN A PANTALLAS PEQUEÑAS */
+
+@media (max-width: 900px) {
+  .fila-superior,
+  .lista-materias {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .fila-superior .recordatorios {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .contenedor {
+    padding: 20px 15px;
+  }
+
+  .fila-informacion,
+  .fila-superior,
+  .lista-materias {
+    grid-template-columns: 1fr;
+  }
+
+  .fila-superior .recordatorios {
+    grid-column: auto;
+  }
+
+  .agregar-tarea {
+    flex-wrap: wrap;
+  }
+
+  .encabezado h1 {
+    font-size: 30px;
+  }
+}
+
+
+
+/* Botones para eliminar */
+button.boton-eliminar {
+  background-color: #f7c8d8;
+  color: #6b3e4d;
+}
+
+button.boton-eliminar:hover {
+  background-color: #efb6ca;
+}
